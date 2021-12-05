@@ -39,42 +39,39 @@ if (isset($_POST["cari"])) {
                             <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="daftar_buku.php">Admin - Tools</a>
+                            <a class="nav-link active" href="daftar_buku.php">Daftar Buku</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end">
             <a href="registrasi.php" class="btn btn-secondary">Register</a>
         </div>
         <div class="d-flex justify-content-end">
             <a href="login.php" class="btn btn-success mx-3">Login</a>
-        </div> -->
-        <div class="d-flex justify-content-end">
-            <a href="logout.php" class="btn btn-danger mx-3">Logout</a>
         </div>
+        <!-- <div class="d-flex justify-content-end">
+            <a href="logout.php" class="btn btn-danger mx-3">Logout</a>
+        </div> -->
     </nav>
 
     <!-- End Navbar -->
 
-    <h1 class="text-center my-3">Admin - Daftar Buku</h1>
+    <h1 class="text-center my-3">Daftar Buku</h1>
 
     <!-- Table -->
     <div class="container">
 
         <!-- Search -->
         <form class="d-flex" action="" method="post">
-            <input type="text" name="keyword" class="form-control me-2" autofocus placeholder="Cari buku...." autocomplete="off">
+            <input type="text" name="keyword" class="form-control me-2" autofocus placeholder="Cari buku...." autocomplete="off" autofocus>
             <button type="submit" class="btn btn-outline-primary" name="cari">Search</button>
 
         </form>
         <!-- End Search -->
 
-        <!-- Tambah Mahasiswa -->
-        <a href="tambah.php" class="btn btn-primary my-3">Tambah Data Buku</a>
-
-        <table class="table">
+        <table class="table mt-3">
             <thead class="table-dark">
                 <tr>
                     <th scope="col" class="text-center">#</th>
@@ -85,7 +82,6 @@ if (isset($_POST["cari"])) {
                     <th scope="col" class="text-center">Jenis Buku</th>
                     <th scope="col" class="text-center">Bahasa</th>
                     <th scope="col" class="text-center">Penerbit</th>
-                    <th scope="col" class="text-center">Aksi</th>
                 </tr>
             </thead>
 
@@ -102,11 +98,6 @@ if (isset($_POST["cari"])) {
                         <td class="text-center"><?= $row['jenis_buku']; ?></td>
                         <td class="text-center"><?= $row['bahasa']; ?></td>
                         <td class="text-center"><?= $row['penerbit']; ?></td>
-                        <td class="text-center">
-                            <a href="ubah.php?id=<?= $row["id"]; ?>" class="btn btn-success">Ubah</a>
-                            <!-- tanda "?" digunakan untuk mengirimkan data -->
-                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');" class="btn btn-danger">Hapus</a>
-                        </td>
                     </tr>
                     <?php $i++; ?>
                 <?php endforeach; ?>

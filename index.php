@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["login"])) {
+    header("Location: daftar_buku.php");
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -27,7 +37,7 @@
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="daftar_buku.php">Daftar Buku</a>
+                            <a class="nav-link" href="user_search.php">Daftar Buku</a>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +47,7 @@
             <a href="registrasi.php" class="btn btn-secondary">Register</a>
         </div>
         <div class="d-flex justify-content-end">
-            <a href="register.php" class="btn btn-success mx-3">Login</a>
+            <a href="login.php" class="btn btn-success mx-3">Login</a>
         </div>
     </nav>
 

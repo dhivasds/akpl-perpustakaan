@@ -1,17 +1,36 @@
 <?php
+session_start();
+
+if (isset($_SESSION["login"])) {
+    header("Location: index.php");
+    exit;
+}
+
 require 'functions.php';
 
-if (isset($_POST["register"])) {
+if (isset($_POST["login"])) {
 
-    if (registrasi($_POST) > 0) {
-        echo "
-        <script> 
-            alert('user baru telah ditambahkan!');
-        </script>
-    ";
-    } else {
-        echo mysqli_error($conn);
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+    // cek username
+    if (mysqli_num_rows($result) === 1) {
+
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])) {
+
+            // set session
+            $_SESSION["login"] = true;
+
+            header("Location: index.php");
+            exit;
+        }
     }
+
+    $error = true;
 }
 
 ?>
@@ -27,7 +46,7 @@ if (isset($_POST["register"])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Register | Perpustakaan</title>
+    <title>Login | Perpustakaan</title>
 </head>
 
 <!-- Navbar -->
@@ -50,18 +69,25 @@ if (isset($_POST["register"])) {
             </div>
         </div>
     </div>
-    <!-- <div class="d-flex justify-content-end">
-        <a href="registrasi.php" class="btn btn-secondary">Register</a>
-    </div> -->
     <div class="d-flex justify-content-end">
-        <a href="login.php" class="btn btn-success mx-3">Login</a>
+        <a href="registrasi.php" class="btn btn-secondary mx-3">Register</a>
     </div>
+    <!-- <div class="d-flex justify-content-end">
+        <a href="register.php" class="btn btn-success mx-3">Login</a>
+    </div> -->
 </nav>
 
 <!-- End Navbar -->
 
-<h1 class="text-center my-3">Register Account</h1>
+<h1 class="text-center my-3">Login Account</h1>
 <div class="container col-lg-5">
+
+    <?php if (isset($error)) : ?>
+        <div class="alert alert-danger" role="alert">
+            Username / Password salah!
+        </div>
+    <?php endif; ?>
+
     <form action="" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
@@ -75,14 +101,10 @@ if (isset($_POST["register"])) {
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="password">
         </div>
-        <div class="mb-3">
-            <label for="password2" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" name="password2" id="password2">
-        </div>
         <small>
-            <p class="text-center">You have already account?<a href="login.php" class="fw-bold text-decoration-none"> Login now!</a></p>
+            <p class="text-center">You don't have account?<a href="registrasi.php" class="fw-bold text-decoration-none"> Register now!</a></p>
         </small>
-        <button type="submit" class="btn btn-primary mb-3" name="register">Sign Up</button>
+        <button type="submit" class="btn btn-primary mb-3" name="login">Login</button>
 
     </form>
 </div>
