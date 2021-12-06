@@ -15,17 +15,32 @@ if (isset($_POST["login"])) {
 
     $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
 
+    // cek jika yang login adalah admin
+
     // cek username
     if (mysqli_num_rows($result) === 1) {
 
-        // cek password
+        // cek login user / admin
         $row = mysqli_fetch_assoc($result);
+        if ($row['level'] == "admin") {
+            $_SESSION['username'] = $username;
+            $_SESSION['level'] = "admin";
+            header("Location: halaman_admin.php");
+        } else if ($row['level'] == "user") {
+            $_SESSION['username'] = $username;
+            $_SESSION['level'] = "user";
+            header("Location: halaman_user.php");
+        } else {
+            header("Location: index.php");
+        }
+
+        // cek password
         if (password_verify($password, $row["password"])) {
 
             // set session
             $_SESSION["login"] = true;
 
-            header("Location: index.php");
+            // header("Location: index.php");
             exit;
         }
     }
