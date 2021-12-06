@@ -65,7 +65,7 @@ if (isset($_POST["register"])) {
     <form action="" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" name="username" id="username" autofocus>
+            <input type="text" class="form-control" name="username" id="username" autofocus required>
         </div>
         <!-- <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
@@ -73,11 +73,11 @@ if (isset($_POST["register"])) {
         </div> -->
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password" id="password">
+            <input type="password" class="form-control" name="password" id="password" required>
         </div>
         <div class="mb-3">
             <label for="password2" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" name="password2" id="password2">
+            <input type="password" class="form-control" name="password2" id="password2" required>
         </div>
         <small>
             <p class="text-center">You have already account?<a href="login.php" class="fw-bold text-decoration-none"> Login now!</a></p>

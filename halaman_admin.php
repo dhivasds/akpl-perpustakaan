@@ -39,7 +39,7 @@ if (isset($_POST["cari"])) {
                             <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="daftar_buku.php">Admin - Tools</a>
+                            <a class="nav-link active" href="halaman_admin.php">Admin - Tools</a>
                         </li>
                     </ul>
                 </div>

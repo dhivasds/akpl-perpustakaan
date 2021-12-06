@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION["login"])) {
-    header("Location: daftar_buku.php");
+    header("Location: halaman_admin.php");
     exit;
 }
 ?>
