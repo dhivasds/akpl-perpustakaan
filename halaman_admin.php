@@ -71,7 +71,7 @@ if (isset($_POST["cari"])) {
         </form>
         <!-- End Search -->
 
-        <!-- Tambah Mahasiswa -->
+        <!-- Tambah Buku -->
         <a href="tambah.php" class="btn btn-primary my-3">Tambah Data Buku</a>
 
         <table class="table">

@@ -17,6 +17,7 @@ function tambah($data)
 {
     global $conn;
     $judul_buku = htmlspecialchars($data['judul_buku']);
+    $isi_buku = $data['isi_buku'];
     $penulis = htmlspecialchars($data['penulis']);
     $tahun_terbit = htmlspecialchars($data['tahun_terbit']);
     $jenis_buku = htmlspecialchars($data['jenis_buku']);
@@ -29,7 +30,7 @@ function tambah($data)
         return false;
     }
 
-    $query = "INSERT INTO buku_detail VALUES ('', '$judul_buku', '$penulis', '$tahun_terbit', '$jenis_buku', '$bahasa', '$penerbit', '$gambar')";
+    $query = "INSERT INTO buku_detail VALUES ('', '$judul_buku', '$isi_buku', '$penulis', '$tahun_terbit', '$jenis_buku', '$bahasa', '$penerbit', '$gambar')";
 
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
@@ -95,6 +96,7 @@ function ubah($data)
     global $conn;
     $id = $data['id'];
     $judul_buku = htmlspecialchars($data['judul_buku']);
+    $isi_buku = $data['isi_buku'];
     $penulis = htmlspecialchars($data['penulis']);
     $tahun_terbit = htmlspecialchars($data['tahun_terbit']);
     $jenis_buku = htmlspecialchars($data['jenis_buku']);
@@ -113,6 +115,7 @@ function ubah($data)
 
     $query = "UPDATE detail_buku SET
             judul_buku = '$judul_buku',
+            isi_buku = '$isi_buku',
             penulis = '$penulis',
             tahun_terbit = '$tahun_terbit',
             jenis_buku = '$jenis_buku',
