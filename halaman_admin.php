@@ -36,7 +36,7 @@ if (isset($_POST["cari"])) {
                 <div class="container">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="index_admin.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="halaman_admin.php">List Book</a>

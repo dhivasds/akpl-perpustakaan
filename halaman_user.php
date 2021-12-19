@@ -68,12 +68,12 @@ if (isset($_POST["cari"])) {
             <div class="card mb-3 " style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="img/<?= $row['gambar']; ?>" class="img-fluid rounded-start" alt="...">
+                        <img src="img/<?= $row['gambar']; ?>" class="img-fluid rounded-start">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title"><?= $row['judul_buku']; ?></h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><?= substr($row['isi_buku'], 0, 150); ?></p>
 
                             <a href="detail.php?id=<?= $row['id']; ?>" class="btn btn-primary">View Detail</a>
                             <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

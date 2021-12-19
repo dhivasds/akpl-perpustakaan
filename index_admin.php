@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-
-if (isset($_SESSION["login"])) {
-    header("Location: halaman_admin.php");
-    exit;
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -39,17 +29,20 @@ if (isset($_SESSION["login"])) {
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="user_search.php">Book List</a>
+                            <a class="nav-link" href="halaman_admin.php">Book List</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-end">
+        <!-- <div class="d-flex justify-content-end">
             <a href="registrasi.php" class="btn btn-secondary">Register</a>
         </div>
         <div class="d-flex justify-content-end">
             <a href="login.php" class="btn btn-success mx-3">Login</a>
+        </div> -->
+        <div class="d-flex justify-content-end">
+            <a href="logout.php" class="btn btn-danger mx-3">Logout</a>
         </div>
     </nav>
 
@@ -57,22 +50,13 @@ if (isset($_SESSION["login"])) {
 
 
     <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
-                    <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-                </svg>
-                <span class="fs-4">Welcome to E-Library</span>
-            </a>
-        </header>
 
 
         <div class="jumbotron" style="background-image: url(img/library.jpg); background-size: 100%; height:400px;  filter: blur(0.4px);">
             <div class="container for-about text-white">
-                <br>
-                <h1 class="text-center fs-1">E-Library</h1>
-                <p class="text-center fs-3">You can do anything, never stop learning </p>
+                <br><br>
+                <h1 class="text-center fs-1">Welcome back Admin</h1>
+                <!-- <p class="text-center fs-3">You can do anything, never stop learning</p> -->
             </div>
         </div>
 
@@ -82,17 +66,17 @@ if (isset($_SESSION["login"])) {
         <div class="row align-items-md-stretch mt-4">
             <div class="col-md-6">
                 <div class="h-100 p-5 text-white bg-primary rounded-3">
-                    <h2>Find your favorite book</h2>
-                    <p>find your favorite type of book in the E-Library.</p>
-                    <a href="user_search.php" class="btn btn-outline-light">Find Books</a>
+                    <h2>Add Book</h2>
+                    <p>Quick access to add books.</p>
+                    <a href="tambah.php" class="btn btn-outline-light">Find Books</a>
                     <!-- <button class="btn btn-outline-light" type="button">Find Books</button> -->
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Register Now</h2>
-                    <p>Register now on the E-Library, so you can access all available books.</p>
-                    <a href="registrasi.php" class="btn btn-outline-secondary">Register</a>
+                    <h2>List Book</h2>
+                    <p>Quick access to do book searches.</p>
+                    <a href="halaman_admin.php" class="btn btn-outline-secondary">Register</a>
                     <!-- <button class="btn btn-outline-secondary" type="button">Register</button> -->
                 </div>
             </div>
