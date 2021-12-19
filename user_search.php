@@ -21,14 +21,14 @@ if (isset($_POST["cari"])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Daftar Buku | E-Perpustakaan</title>
+    <title>Book List | E-Library</title>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">PERPUSTAKAAN</a>
+            <a class="navbar-brand" href="index.php">E-Library</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +39,7 @@ if (isset($_POST["cari"])) {
                             <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="user_search.php">Daftar Buku</a>
+                            <a class="nav-link active" href="user_search.php">Book List</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@ if (isset($_POST["cari"])) {
 
     <!-- End Navbar -->
 
-    <h1 class="text-center my-3">Daftar Buku</h1>
+    <h1 class="text-center my-3">Book List</h1>
 
     <!-- Table -->
     <div class="container">

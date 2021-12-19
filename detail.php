@@ -28,10 +28,12 @@ $bk_dtl = query("SELECT * FROM buku_detail WHERE id=$id")[0];
     <div class="container mt-5">
 
         <h3 class="text-center"><?= $bk_dtl["judul_buku"]; ?></h3>
-        <img src="img/<?= $bk_dtl['gambar']; ?>" class="rounded mx-auto d-block">
+        <img src="img/<?= $bk_dtl['gambar']; ?>" class="rounded mx-auto d-block" style="width: 300px;">
+        <p class="text-center my-3">Penulis: <?= $bk_dtl['penulis']; ?> | Tahun Terbit: <?= $bk_dtl['tahun_terbit']; ?> | Jenis Buku: <?= $bk_dtl['jenis_buku']; ?> | Bahasa: <?= $bk_dtl['bahasa']; ?> | Penerbit: <?= $bk_dtl['penerbit']; ?></p>
+        <p class="mt-3"><?= $bk_dtl["isi_buku"]; ?></p>
 
 
-        <a href="halaman_user.php">Back to Book List</a>
+        <a href="halaman_user.php" class="btn btn-primary">Back to Book List </a>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 

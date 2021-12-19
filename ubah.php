@@ -59,6 +59,12 @@ if (isset($_POST["submit"])) {
                     <label class="form-label" for="nama">Judul Buku : </label>
                     <input class="form-control" type="text" name="judul_buku" id="judul_buku" value="<?= $bk_dtl["judul_buku"]; ?>" required>
                 </div>
+                <div class="mb-2">
+                    <!-- tambahkan "required" agar jika form kosong lalu di submit, ada keterangan error -->
+                    <label class="form-label" for="nama">Isi Buku : </label>
+                    <!-- <input class="form-control" type="text" name="isi_buku" id="isi_buku" value="<?= $bk_dtl["isi_buku"]; ?>" required> -->
+                    <textarea class="form-control" style="height: 150px;" name="isi_buku" id="isi_buku"><?= $bk_dtl["isi_buku"]; ?></textarea>
+                </div>
                 <div class=" mb-2">
                     <label class="form-label" for="nrp">Penulis : </label>
                     <input class="form-control" type="text" name="penulis" id="penulis" value="<?= $bk_dtl["penulis"]; ?>" required>

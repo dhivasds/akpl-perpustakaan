@@ -75,6 +75,12 @@ if (isset($_POST["submit"])) {
                     <input class="form-control" type="text" name="judul_buku" id="judul_buku" required>
                 </div>
                 <div class="mb-2">
+                    <!-- tambahkan "required" agar jika form kosong lalu di submit, ada keterangan error -->
+                    <label class="form-label" for="nama">Isi Buku : </label>
+                    <!-- <input class="form-control" type="text" name="isi_buku" id="isi_buku" required> -->
+                    <textarea class="form-control" style="height: 150px;" type="text" name="isi_buku" id="isi_buku"></textarea>
+                </div>
+                <div class="mb-2">
                     <label class="form-label" for="nrp">Penulis : </label>
                     <input class="form-control" type="text" name="penulis" id="penulis" required>
                 </div>

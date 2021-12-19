@@ -28,7 +28,7 @@ if (isset($_POST["cari"])) {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="halaman_user.php">PERPUSTAKAAN</a>
+            <a class="navbar-brand" href="halaman_user.php">E-Library</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +39,7 @@ if (isset($_POST["cari"])) {
                             <a class="nav-link" aria-current="page" href="index_user.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="halaman_user.php">User - Daftar Buku</a>
+                            <a class="nav-link active" href="halaman_user.php">List Book</a>
                         </li>
                     </ul>
                 </div>
@@ -62,10 +62,10 @@ if (isset($_POST["cari"])) {
 
 
     <div class="container col-lg-10">
-        <h1 class="my-3">Welcome to E-Library!</h1>
+        <h1 class="my-3 text-center">Welcome to E-Library!</h1>
         <?php $i = 1; ?>
         <?php foreach ($buku_detail as $row) : ?>
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3 " style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="img/<?= $row['gambar']; ?>" class="img-fluid rounded-start" alt="...">

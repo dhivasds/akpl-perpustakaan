@@ -96,7 +96,8 @@ function ubah($data)
     global $conn;
     $id = $data['id'];
     $judul_buku = htmlspecialchars($data['judul_buku']);
-    $isi_buku = $data['isi_buku'];
+    $isi_buku = htmlspecialchars($data['isi_buku']);
+    // $isi_buku = $data['isi_buku'];
     $penulis = htmlspecialchars($data['penulis']);
     $tahun_terbit = htmlspecialchars($data['tahun_terbit']);
     $jenis_buku = htmlspecialchars($data['jenis_buku']);
